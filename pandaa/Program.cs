@@ -12,7 +12,7 @@ namespace compressions
             Console.WriteLine("Hello World!");
             var list = new List<string>();
 
-            using (var streamReader = new StreamReader("../../panda-small.txt"))
+            using (var streamReader = new StreamReader("../../Tom_Jerry.pgm"))
             {
                 string line;
                 while ((line = streamReader.ReadLine()) != null)
@@ -23,7 +23,7 @@ namespace compressions
 
             }
             Console.ReadKey();
-            using (StreamWriter writer = new StreamWriter("../../panda-compressed.txt"))
+            using (StreamWriter writer = new StreamWriter("../../Tom_Jerry-compressed.pgm"))
             {
                 string temp;
                 foreach (string item in list)
@@ -36,7 +36,7 @@ namespace compressions
 
             var clist = new List<string>();
 
-            using (var streamReader = new StreamReader("../../panda-compressed.txt"))
+            using (var streamReader = new StreamReader("../../Tom_Jerry-compressed.pgm"))
             {
                 string cline;
                 while ((cline = streamReader.ReadLine()) != null)
@@ -47,7 +47,7 @@ namespace compressions
 
             }
 
-            using (StreamWriter writer = new StreamWriter("../../panda-dcompressed.txt"))
+            using (StreamWriter writer = new StreamWriter("../../Tom_Jerry-dcompressed.pgm"))
             {
                 string temp;
                 foreach (string item in clist)
@@ -59,13 +59,13 @@ namespace compressions
             }
             var dclist = new List<string>();
 
-            using (var streamReader = new StreamReader("../../panda-dcompressed.txt"))
+            using (var streamReader = new StreamReader("../../Tom_Jerry-dcompressed.pgm"))
             {
                 string dcline;
                 while ((dcline = streamReader.ReadLine()) != null)
                 {
                     dclist.Add(dcline);
-                    //Console.WriteLine(dcline);
+                    
                 }
 
             }
@@ -101,7 +101,7 @@ namespace compressions
                 }
                 else
                 {
-                    //Console.Write(hold0+" ");   
+                     
                     empty = empty + zero + " ";
                     if (digit == '0') { digit = '1'; }
                     else { digit = '0'; }
@@ -109,7 +109,7 @@ namespace compressions
                 }
 
             }
-            //Console.Write(hold0);
+            
             empty = empty + zero;
             return empty;
         }
